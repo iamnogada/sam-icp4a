@@ -27,7 +27,7 @@ public class PetController {
     @Autowired
 	private PetService service;
     // @Autowired
-	// private PetRemoteService serviceRemote;
+	// private PetRemoteService serviceRemote;wqw
 
     @GetMapping(path = "/pet")
     @ResponseBody
