@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.nogada.petstore.pet.model.Pet;
 // import io.nogada.petstore.pet.model.PetQuery;
 import io.nogada.petstore.pet.service.PetService;
 
@@ -33,6 +34,7 @@ public class PetController {
     String getPetInGet(@RequestParam(required=false,defaultValue = "") final String q,
             final HttpServletRequest request) throws Exception {
         logger.info("[Trace]: Controller called");
+        Pet pet = new Pet();
         return service.search(q);
     }
 
@@ -60,7 +62,7 @@ public class PetController {
     // @ResponseBody
     // String getPetFromRemote(@RequestBody final PetQuery query, final HttpServletRequest request) throws Exception {
     //     logger.info("[Trace]: Controller called");
-		
+
 	// 	return serviceRemote.search(query.getKeyword());
     // }
 
