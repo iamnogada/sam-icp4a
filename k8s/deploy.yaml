@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: samstore
-        image: nogada/sam-icp4a
+        image: nogada/sam-icp4a:v6
         ports:
         - containerPort: 8080
           name: tomcat
@@ -38,7 +38,7 @@ spec:
           periodSeconds: 60
         readinessProbe:
           httpGet:
-            path: /health
+            path: /ready
             port: tomcat
           initialDelaySeconds: 30
           periodSeconds: 5

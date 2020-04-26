@@ -45,15 +45,17 @@ public class PetController {
         this.service.eatingMemory(number);
         return "ok";
     }
-    @GetMapping(path = "/health")
+    @GetMapping(path = "/ready")
     @ResponseBody
     String health() throws Exception {
-        return "health";
+        System.out.println("ready");
+        return "ready";
     }
 
     @GetMapping(path = "/liveness")
     @ResponseBody
     String liveness() throws Exception {
+        System.out.println("liveness");
         return "liveness";
     }
 
