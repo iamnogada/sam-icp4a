@@ -48,7 +48,13 @@ public class PetController {
     @GetMapping(path = "/health")
     @ResponseBody
     String health() throws Exception {
-        return "ok";
+        return "health";
+    }
+
+    @GetMapping(path = "/liveness")
+    @ResponseBody
+    String liveness() throws Exception {
+        return "liveness";
     }
 
     @PostMapping(path = "/pet")
